@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/titleResearchDoctor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Research Doctor"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:rowCount="4"
+            android:layout_gravity="center">
+
+            <!-- TextView1 -->
+            <TextView
+                android:layout_row="0"
+                android:layout_column="0"
+                android:layout_columnSpan="1"
+                android:layout_columnWeight="1"
+                android:text="FirstName"
+                android:textAlignment="textStart" />
+
+            <!-- EditText1 -->
+            <EditText
+                android:id="@+id/DoctorFirstName"
+                android:hint="Simon"
+                android:layout_columnSpan="1"
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:layout_row="1"
+                android:layout_column="0"/>
+
+            <!-- TextView2 -->
+            <TextView
+                android:layout_row="0"
+                android:layout_column="1"
+                android:layout_columnSpan="1"
+                android:layout_columnWeight="1"
+                android:text="LastName"
+                android:textAlignment="viewStart" />
+
+            <!-- EditText2 -->
+            <EditText
+                android:id="@+id/DoctorLastName"
+                android:hint="Drogmini"
+                android:layout_columnSpan="1"
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:layout_row="1"
+                android:layout_column="1"/>
+
+            <!-- TextView3 -->
+            <TextView
+                android:layout_row="2"
+                android:layout_column="0"
+                android:layout_columnSpan="1"
+                android:layout_columnWeight="1"
+                android:text="City"
+                android:textAlignment="viewStart" />
+
+            <!-- EditText3 -->
+            <EditText
+                android:id="@+id/DoctorCity"
+                android:hint="Paris"
+                android:layout_columnSpan="1"
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:layout_row="3"
+                android:layout_column="0"/>
+
+            <!-- TextView4 -->
+            <TextView
+                android:layout_row="2"
+                android:layout_column="1"
+                android:layout_columnSpan="1"
+                android:layout_columnWeight="1"
+                android:text="Department"
+                android:textAlignment="viewStart" />
+
+            <!-- EditText4 -->
+            <EditText
+                android:id="@+id/DoctorDepartment"
+                android:hint="Ile de France"
+                android:layout_columnSpan="1"
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:layout_row="3"
+                android:layout_column="1"/>
+        </GridLayout>
+
+        <ListView
+            android:id="@+id/listViewAnswerDoctors"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            app:layout_constraintTop_toTopOf="@+id/DoctorDepartment"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <LinearLayout
+            android:id="@+id/buttonLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <Button
+                android:id="@+id/buttonResearchBack"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="16dp"
+                android:layout_weight="1"
+                android:text="Back" />
+
+            <Button
+                android:id="@+id/ButtonResearch"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Research"
+                android:layout_margin="16dp"
+                android:layout_gravity="center_horizontal" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>
