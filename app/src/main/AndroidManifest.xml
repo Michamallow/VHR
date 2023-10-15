@@ -28,7 +28,7 @@
         android:theme="@style/Theme.Vhr"
         tools:targetApi="31">
         <activity
-            android:name=".DoctorActivity.TreatingDoctorActivity"
+            android:name=".OtherProfiles.RestrictionActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -46,6 +46,8 @@
             </intent-filter>
         </activity>
 		<activity android:name=".DoctorActivity.DoctorsResearchActivity">
+        </activity>
+        <activity android:name=".OtherProfiles.CreationProfil">
         </activity>
         <activity
             android:name=".Calendar.DateDetailActivity"
