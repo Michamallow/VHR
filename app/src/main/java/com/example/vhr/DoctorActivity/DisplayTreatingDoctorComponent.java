@@ -9,9 +9,13 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.vhr.Calendar.Event;
+import com.example.vhr.Calendar.EventSave;
 import com.example.vhr.R;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 //Component used to display doctor list
@@ -29,6 +33,16 @@ public class DisplayTreatingDoctorComponent extends ArrayAdapter<Doctor> {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.list_item_treating_doctor, parent, false);
         }
 
+        Event lastAppointment = new Event(new Date(0),"EventCompar","",doctor);
+        List<Event> events = EventSave.getEvents(this.getContext());
+
+        for (Event event: events) {
+            if(event.getDoctor().getId() == doctor.getId()){
+                if(event.getDateTime().compareTo(lastAppointment.getDateTime()) >0 ){
+                    lastAppointment = event;
+                }
+            }
+        }
 
         String location = "Location: ";
         location += doctor.getNumeroVoie().equals("null") ? "" : doctor.getNumeroVoie()+" ";
@@ -38,10 +52,14 @@ public class DisplayTreatingDoctorComponent extends ArrayAdapter<Doctor> {
         if (location.equals("Location: ")){
             location += "No information";
         }
+        String appointementInfo = "Last Appointment: No appointment found";
+        if(lastAppointment.getDateTime().compareTo(new Date(0)) != 0){
+            appointementInfo = "Last Appointment:" + lastAppointment.getDateTime().toString();
+        }
 
         TextView doctorinfoframe = convertView.findViewById(R.id.doctorinfoframe);
         doctorinfoframe.setText(doctor.getLibelleProfession() + "\n" + doctor.getNom() + " " + doctor.getPrenom()+"\n"
-        + location);
+        + location + "\n" + appointementInfo);
 
         Button deleteButton = convertView.findViewById(R.id.deleteButton);
         deleteButton.setOnClickListener(new View.OnClickListener() {
