@@ -1,7 +1,9 @@
 package com.example.vhr.DoctorActivity;
 
+import java.io.Serializable;
+
 //Class containing the information returned by the API
-public class Doctor {
+public class Doctor implements Serializable {
     private int id;
     private String prenom;
     private String nom;

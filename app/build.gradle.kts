@@ -4,7 +4,7 @@ plugins {
 
 android {
     namespace = "com.example.vhr"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.vhr"
@@ -34,7 +34,7 @@ android {
 dependencies {
 
     implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("com.google.android.material:material:1.9.0")
+    implementation("com.google.android.material:material:1.10.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("com.squareup.okhttp3:okhttp:4.10.0") // Utiliser pour la communication avec l'Api
     implementation ("com.google.code.gson:gson:2.8.9") // Utiliser pour simplifier la sauvegarde
