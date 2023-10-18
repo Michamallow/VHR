@@ -25,6 +25,7 @@
             android:layout_height="wrap_content"
             android:columnCount="2"
             android:rowCount="4"
+            android:layout_margin="20dp"
             android:layout_gravity="center">
 
             <!-- TextView1 -->
@@ -33,6 +34,7 @@
                 android:layout_column="0"
                 android:layout_columnSpan="1"
                 android:layout_columnWeight="1"
+                android:layout_margin="6dp"
                 android:text="FirstName"
                 android:textAlignment="textStart" />
 
@@ -52,6 +54,7 @@
                 android:layout_column="1"
                 android:layout_columnSpan="1"
                 android:layout_columnWeight="1"
+                android:layout_margin="6dp"
                 android:text="LastName"
                 android:textAlignment="viewStart" />
 
@@ -71,6 +74,7 @@
                 android:layout_column="0"
                 android:layout_columnSpan="1"
                 android:layout_columnWeight="1"
+                android:layout_margin="6dp"
                 android:text="City"
                 android:textAlignment="viewStart" />
 
@@ -90,6 +94,7 @@
                 android:layout_column="1"
                 android:layout_columnSpan="1"
                 android:layout_columnWeight="1"
+                android:layout_margin="6dp"
                 android:text="Department"
                 android:textAlignment="viewStart" />
 

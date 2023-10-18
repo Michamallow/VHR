@@ -102,7 +102,6 @@ public class DateDetailActivity extends AppCompatActivity {
             finish();
         });
 
-
     }
 
     private void saveEvent(Date selectedDate, EditText eventNameEditText, EditText eventDescriptionEditText, Spinner spinnerTime, Spinner spinnerDoctor) {
