@@ -105,6 +105,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:backgroundTint="@android:color/holo_blue_light"
                         android:clickable="true" />
 
                     <Space
@@ -130,6 +131,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:backgroundTint="@android:color/holo_blue_light"
                         android:clickable="true" />
 
                     <Space
@@ -158,7 +160,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:fontFamily="sans-serif-black"
-                    android:text="Organe Donator"
+                    android:text="Organ Donor"
                     android:textAlignment="center"
                     android:textColor="@color/material_dynamic_tertiary40"
                     android:textSize="20sp" />
@@ -198,6 +200,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:backgroundTint="@android:color/holo_blue_light"
                         android:clickable="true" />
 
                     <Space
@@ -223,6 +226,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:backgroundTint="@android:color/holo_blue_light"
                         android:clickable="true" />
 
                     <Space
@@ -291,6 +295,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:backgroundTint="@android:color/holo_blue_light"
                         android:clickable="true" />
 
                     <Space
@@ -316,6 +321,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:backgroundTint="@android:color/holo_blue_light"
                         android:clickable="true" />
 
                     <Space
@@ -351,6 +357,7 @@
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
             android:background="@color/black"
+            android:backgroundTint="@android:color/holo_blue_light"
             android:text="+"
             android:textSize="24sp" />
 
