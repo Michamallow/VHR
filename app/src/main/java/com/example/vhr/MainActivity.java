@@ -10,6 +10,7 @@ import android.view.View;
 import android.webkit.MimeTypeMap;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -20,8 +21,11 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.FileProvider;
 
+import com.example.vhr.Calendar.CalendarActivity;
+import com.example.vhr.DoctorActivity.DoctorsResearchActivity;
 import com.example.vhr.ImportScanSave.CameraActivity;
 import com.example.vhr.ImportScanSave.PopupDialog;
+import com.example.vhr.OtherProfiles.RestrictionActivity;
 
 import java.io.File;
 import java.io.IOException;
@@ -44,6 +48,10 @@ public class MainActivity extends AppCompatActivity {
     private Button weightButton;
     private Button heightButton;
 
+    ImageView calendarImageView;
+    ImageView doctorsImageView;
+    ImageView restrictionImageView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,7 +65,12 @@ public class MainActivity extends AppCompatActivity {
         weightButton = findViewById(R.id.button5);
         heightButton = findViewById(R.id.button6);
 
-        // Set click listeners for the buttons
+        // Same for image views
+        calendarImageView = findViewById(R.id.imageView);
+        doctorsImageView = findViewById(R.id.imageView2);
+        restrictionImageView = findViewById(R.id.imageView3);
+
+        // Set click listeners for the buttons and imageView elements
         bloodTypeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -97,6 +110,33 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 showInputDialog(heightButton, "Height", heightButton.getText().toString());
+            }
+        });
+
+        calendarImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Navigate to the CalendarActivity
+                Intent intent = new Intent(MainActivity.this, CalendarActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        doctorsImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Navigate to the DoctorsResearchActivity
+                Intent intent = new Intent(MainActivity.this, DoctorsResearchActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        restrictionImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Navigate to the RestrictionActivity
+                Intent intent = new Intent(MainActivity.this, RestrictionActivity.class);
+                startActivity(intent);
             }
         });
 

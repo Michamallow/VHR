@@ -5,7 +5,9 @@ import android.app.NotificationManager;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.CalendarView;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -13,6 +15,9 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.vhr.DoctorActivity.DoctorsResearchActivity;
+import com.example.vhr.MainActivity;
+import com.example.vhr.OtherProfiles.RestrictionActivity;
 import com.example.vhr.R;
 
 import java.util.ArrayList;
@@ -30,11 +35,18 @@ public class CalendarActivity extends AppCompatActivity {
 
     private Date selectedDate;
     private EventListAdapter eventListAdapter;
+    ImageView calendarImageView;
+    ImageView doctorsImageView;
+    ImageView restrictionImageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendar);
+
+        calendarImageView = findViewById(R.id.imageView);
+        doctorsImageView = findViewById(R.id.imageView2);
+        restrictionImageView = findViewById(R.id.imageView3);
 
         CalendarView calendarView = findViewById(R.id.calendarView);
         ListView eventListView = findViewById(R.id.eventListView);
@@ -63,6 +75,32 @@ public class CalendarActivity extends AppCompatActivity {
         });
         createNotificationChannel();
 
+        calendarImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Navigate to the CalendarActivity
+                Intent intent = new Intent(CalendarActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        doctorsImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Navigate to the DoctorsResearchActivity
+                Intent intent = new Intent(CalendarActivity.this, DoctorsResearchActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        restrictionImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Navigate to the RestrictionActivity
+                Intent intent = new Intent(CalendarActivity.this, RestrictionActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void showEventsForDate() {

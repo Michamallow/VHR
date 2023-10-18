@@ -7,10 +7,14 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.vhr.Calendar.CalendarActivity;
+import com.example.vhr.MainActivity;
+import com.example.vhr.OtherProfiles.RestrictionActivity;
 import com.example.vhr.R;
 
 import org.json.JSONArray;
@@ -38,6 +42,9 @@ public class DoctorsResearchActivity extends AppCompatActivity {
     private static final String URL_API_REQUEST = "https://production.api-annuaire-sante.fr/professionnel_de_santes";
     private String token;
     private List<Doctor> answerDoctorResearch;
+    ImageView calendarImageView;
+    ImageView doctorsImageView;
+    ImageView restrictionImageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +54,10 @@ public class DoctorsResearchActivity extends AppCompatActivity {
         Init();
 
         Button ButtonResearch = findViewById(R.id.ButtonResearch);
+        calendarImageView = findViewById(R.id.imageView);
+        doctorsImageView = findViewById(R.id.imageView2);
+        restrictionImageView = findViewById(R.id.imageView3);
+
         ButtonResearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -60,7 +71,34 @@ public class DoctorsResearchActivity extends AppCompatActivity {
         buttonResearchBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), TreatingDoctorActivity.class);
+                Intent intent = new Intent(DoctorsResearchActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        calendarImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Navigate to the CalendarActivity
+                Intent intent = new Intent(DoctorsResearchActivity.this, CalendarActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        doctorsImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Navigate to the DoctorsResearchActivity
+                Intent intent = new Intent(DoctorsResearchActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        restrictionImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Navigate to the RestrictionActivity
+                Intent intent = new Intent(DoctorsResearchActivity.this, RestrictionActivity.class);
                 startActivity(intent);
             }
         });

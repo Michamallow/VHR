@@ -21,4 +21,6 @@
     <string name="name_popup">Name</string>
     <string name="add_image_button">add Image Button</string>
     <string name="name">Name</string>
+    <string name="captured_image">Image capturée</string>
+    <string name="avatar">Avatar</string>
 </resources>
